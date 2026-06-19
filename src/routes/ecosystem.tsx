@@ -28,7 +28,7 @@ function Ecosystem() {
       <section className="mx-auto max-w-[1400px] px-6 md:px-10">
         <Reveal>
           <span className="eyebrow">Holding architecture</span>
-          <h1 className="mt-6 max-w-5xl font-display text-5xl leading-[1.05] text-ink md:text-7xl">
+          <h1 className="mt-6 max-w-5xl font-display text-4xl font-semibold leading-[1.05] text-ink md:text-5xl">
             Structuring a <span className="text-gold">global ecosystem.</span>
           </h1>
           <p className="mt-6 max-w-2xl text-base leading-relaxed text-slate">

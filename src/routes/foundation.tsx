@@ -31,7 +31,7 @@ function Foundation() {
         <div className="grid items-end gap-16 lg:grid-cols-[1.3fr_1fr]">
           <Reveal>
             <span className="eyebrow">Mama Mia's Foundation</span>
-            <h1 className="mt-6 font-display text-5xl leading-[1.05] text-ink md:text-7xl">
+            <h1 className="mt-6 font-display text-4xl font-semibold leading-[1.05] text-ink md:text-5xl">
               From profit, <span className="text-gold">to people.</span>
             </h1>
             <p className="mt-8 max-w-2xl text-base leading-relaxed text-slate">

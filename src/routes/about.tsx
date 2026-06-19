@@ -23,7 +23,7 @@ function About() {
       <section className="mx-auto max-w-[1400px] px-6 md:px-10">
         <Reveal>
           <span className="eyebrow">About</span>
-          <h1 className="mt-6 max-w-4xl font-display text-5xl leading-[1.05] text-ink md:text-7xl">
+          <h1 className="mt-6 max-w-4xl font-display text-4xl font-semibold leading-[1.05] text-ink md:text-5xl">
             A premier global management <span className="text-gold">& coordination firm.</span>
           </h1>
         </Reveal>
@@ -84,7 +84,7 @@ function About() {
       </section>
 
       <section className="mx-auto mt-32 max-w-[1400px] px-6 md:px-10">
-        <div className="grid gap-12 border border-hairline p-10 lg:grid-cols-[1fr_1.4fr] lg:p-16">
+        <div className="grid gap-12 glass rounded-3xl p-10 lg:grid-cols-[1fr_1.4fr] lg:p-16">
           <Reveal>
             <span className="eyebrow">Founder legacy</span>
             <h2 className="mt-4 font-display text-4xl text-ink">The blueprint of tomorrow.</h2>
