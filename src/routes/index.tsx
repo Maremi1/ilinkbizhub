@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { motion } from "motion/react";
+import { motion, type Variants } from "motion/react";
 import { ArrowRight, Compass, Globe2, Building2, Sparkles } from "lucide-react";
 import { AnimatedMap } from "@/components/AnimatedMap";
 import { EntityCard } from "@/components/EntityCard";
@@ -28,13 +28,13 @@ const pillars = [
   { n: "04", t: "Technology Solutions", d: "Fintech, EdTech, Smart Infrastructure, KYC and cybersecurity platforms.", icon: Sparkles },
 ];
 
-const container = {
+const container: Variants = {
   hidden: {},
   show: { transition: { staggerChildren: 0.12, delayChildren: 0.1 } },
 };
-const item = {
+const item: Variants = {
   hidden: { opacity: 0, y: 24 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.9, ease: [0.2, 0.7, 0.2, 1] } },
+  show: { opacity: 1, y: 0, transition: { duration: 0.9, ease: [0.2, 0.7, 0.2, 1] as const } },
 };
 
 function Home() {
