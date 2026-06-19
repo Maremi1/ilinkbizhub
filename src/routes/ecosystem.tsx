@@ -29,7 +29,7 @@ function Ecosystem() {
         <Reveal>
           <span className="eyebrow">Holding architecture</span>
           <h1 className="mt-6 max-w-5xl font-display text-5xl leading-[1.05] text-ink md:text-7xl">
-            Structuring a <em className="text-gold not-italic">global ecosystem.</em>
+            Structuring a <span className="text-gold">global ecosystem.</span>
           </h1>
           <p className="mt-6 max-w-2xl text-base leading-relaxed text-slate">
             A node-and-spoke architecture engineered for legal soundness, financial optimisation and

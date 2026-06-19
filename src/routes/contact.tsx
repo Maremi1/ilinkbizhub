@@ -26,7 +26,7 @@ function Contact() {
         <Reveal>
           <span className="eyebrow">Get in touch</span>
           <h1 className="mt-6 max-w-4xl font-display text-5xl leading-[1.05] text-ink md:text-7xl">
-            Let's build the <em className="text-gold not-italic">future, together.</em>
+            Let's build the <span className="text-gold">future, together.</span>
           </h1>
         </Reveal>
 

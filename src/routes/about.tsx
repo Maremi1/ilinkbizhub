@@ -24,7 +24,7 @@ function About() {
         <Reveal>
           <span className="eyebrow">About</span>
           <h1 className="mt-6 max-w-4xl font-display text-5xl leading-[1.05] text-ink md:text-7xl">
-            A premier global management <em className="text-gold not-italic">& coordination firm.</em>
+            A premier global management <span className="text-gold">& coordination firm.</span>
           </h1>
         </Reveal>
 
@@ -95,7 +95,7 @@ function About() {
               you structure and protect your assets today defines your legacy tomorrow. From family
               trust setup and corporate structuring to ongoing governance advisory, the practice
               gives high-net-worth families, entrepreneurs and institutions a cohesive strategy to
-              <em className="text-ink not-italic"> build, protect and transition</em> wealth — the right way.
+              <em className="text-ink not-italic"> build, protect and transition</span> wealth — the right way.
             </p>
             <a href="https://thefounder.ilinkbiz.com" target="_blank" rel="noopener noreferrer" className="mt-8 inline-flex items-center gap-3 link-underline text-[12px] uppercase tracking-[0.24em] text-ink">
               Visit The Founder ↗

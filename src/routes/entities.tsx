@@ -23,7 +23,7 @@ function Entities() {
         <Reveal>
           <span className="eyebrow">Group entities</span>
           <h1 className="mt-6 max-w-5xl font-display text-5xl leading-[1.05] text-ink md:text-7xl">
-            One group. <em className="text-gold not-italic">Seven gateways.</em>
+            One group. <span className="text-gold">Seven gateways.</span>
           </h1>
           <p className="mt-6 max-w-2xl text-base leading-relaxed text-slate">
             Each entity operates its own brand, jurisdiction and dedicated subsite. Use this

@@ -32,7 +32,7 @@ function Foundation() {
           <Reveal>
             <span className="eyebrow">Mama Mia's Foundation</span>
             <h1 className="mt-6 font-display text-5xl leading-[1.05] text-ink md:text-7xl">
-              From profit, <em className="text-gold not-italic">to people.</em>
+              From profit, <span className="text-gold">to people.</span>
             </h1>
             <p className="mt-8 max-w-2xl text-base leading-relaxed text-slate">
               Operating as an International NGO, the foundation transforms I Link's strategic
