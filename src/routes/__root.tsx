@@ -86,9 +86,13 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "author", content: "I Link Group" },
       { property: "og:site_name", content: "I Link Group" },
       { property: "og:title", content: "I Link Group — Bridging Capital, Innovation and Global Markets" },
-      { property: "og:description", content: "A diversified holding architecture connecting global capital, proprietary IP and national execution across Africa and beyond." },
+      { property: "og:description", content: "I Link Group is a diversified holding architecture connecting global capital, proprietary IP and national execution across Africa and beyond." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
+      { name: "twitter:title", content: "I Link Group — Bridging Capital, Innovation and Global Markets" },
+      { name: "twitter:description", content: "I Link Group is a diversified holding architecture connecting global capital, proprietary IP and national execution across Africa and beyond." },
+      { property: "og:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/21YdZ7qk8aTbAUB3cOSCXiFbFkC2/social-images/social-1781874062768-WhatsApp_Image_2026-04-09_at_13.31.34.webp" },
+      { name: "twitter:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/21YdZ7qk8aTbAUB3cOSCXiFbFkC2/social-images/social-1781874062768-WhatsApp_Image_2026-04-09_at_13.31.34.webp" },
     ],
     links: [
       {
