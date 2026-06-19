@@ -1,5 +1,6 @@
 import { Link, useRouterState } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
+import { ThemeToggle } from "./ThemeToggle";
 
 const links = [
   { to: "/", label: "Home" },
@@ -59,12 +60,15 @@ export function SiteHeader() {
           })}
         </nav>
 
-        <a
-          href="mailto:info@ilinkbiz.com"
-          className="hidden items-center gap-2 rounded-full border border-ink px-5 py-2 text-[12px] uppercase tracking-[0.22em] text-ink transition hover:bg-ink hover:text-paper lg:inline-flex"
-        >
-          Partner with us
-        </a>
+        <div className="hidden items-center gap-3 lg:flex">
+          <ThemeToggle />
+          <a
+            href="mailto:info@ilinkbiz.com"
+            className="inline-flex items-center gap-2 rounded-full bg-gold px-5 py-2 text-[12px] uppercase tracking-[0.22em] text-[oklch(0.16_0.045_252)] transition hover:opacity-90"
+          >
+            Partner with us
+          </a>
+        </div>
 
         <button
           type="button"

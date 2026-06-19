@@ -13,6 +13,8 @@ import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
+import { ScrollProgress } from "@/components/ScrollProgress";
+import { AnimatedBlobs } from "@/components/AnimatedBlobs";
 
 function NotFoundComponent() {
   return (
@@ -121,11 +123,8 @@ function RootComponent() {
   return (
     <QueryClientProvider client={queryClient}>
       <div className="relative min-h-screen text-ink">
-        <div aria-hidden className="pointer-events-none fixed inset-0 -z-10 overflow-hidden">
-          <span className="blob left-[-10%] top-[10%] h-[28rem] w-[28rem] bg-[oklch(0.78_0.16_232)]" />
-          <span className="blob right-[-8%] top-[40%] h-[32rem] w-[32rem] bg-[oklch(0.82_0.12_245)]" />
-          <span className="blob left-[20%] bottom-[-10%] h-[26rem] w-[26rem] bg-[oklch(0.88_0.09_220)]" />
-        </div>
+        <AnimatedBlobs />
+        <ScrollProgress />
         <SiteHeader />
         <main>
           <Outlet />
