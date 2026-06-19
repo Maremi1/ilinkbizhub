@@ -1,9 +1,7 @@
 @import "tailwindcss" source(none);
 @source "../src";
 @import "tw-animate-css";
-@import "@fontsource/cormorant-garamond/400.css";
-@import "@fontsource/cormorant-garamond/500.css";
-@import "@fontsource/cormorant-garamond/600.css";
+@import "@fontsource-variable/sora";
 @import "@fontsource-variable/work-sans";
 
 @custom-variant dark (&:is(.dark *));
@@ -63,7 +61,7 @@
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
-  --font-display: "Cormorant Garamond", ui-serif, Georgia, serif;
+  --font-display: "Sora Variable", "Sora", ui-sans-serif, system-ui, sans-serif;
   --font-sans: "Work Sans Variable", "Work Sans", ui-sans-serif, system-ui, sans-serif;
   --color-paper: var(--paper);
   --color-ink: var(--ink);
@@ -75,29 +73,30 @@
 
 :root {
   --radius: 0.625rem;
-  --background: oklch(0.985 0.005 85);
-  --foreground: oklch(0.18 0.04 260);
-  --paper: oklch(0.985 0.005 85);
-  --ink: oklch(0.18 0.04 260);
-  --slate: oklch(0.45 0.02 260);
-  --gold: oklch(0.72 0.12 78);
-  --gold-soft: oklch(0.88 0.06 82);
-  --hairline: oklch(0.88 0.01 80);
+  /* Blue glassmorphism palette inspired by the iLink logo */
+  --background: oklch(0.98 0.012 235);
+  --foreground: oklch(0.24 0.13 258);
+  --paper: oklch(0.985 0.012 235);
+  --ink: oklch(0.26 0.14 258);          /* deep iLink navy */
+  --slate: oklch(0.55 0.06 248);        /* muted blue-slate */
+  --gold: oklch(0.72 0.16 232);         /* iLink cyan accent */
+  --gold-soft: oklch(0.92 0.05 230);    /* soft cyan tint */
+  --hairline: oklch(0.9 0.03 235);
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.129 0.042 264.695);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.129 0.042 264.695);
-  --primary: oklch(0.18 0.04 260);
+  --primary: oklch(0.26 0.14 258);
   --primary-foreground: oklch(0.984 0.003 247.858);
   --secondary: oklch(0.968 0.007 247.896);
   --secondary-foreground: oklch(0.208 0.042 265.755);
   --muted: oklch(0.968 0.007 247.896);
   --muted-foreground: oklch(0.554 0.046 257.417);
-  --accent: oklch(0.72 0.12 78);
-  --accent-foreground: oklch(0.18 0.04 260);
+  --accent: oklch(0.72 0.16 232);
+  --accent-foreground: oklch(0.26 0.14 258);
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.984 0.003 247.858);
-  --border: oklch(0.88 0.01 80);
+  --border: oklch(0.9 0.03 235);
   --input: oklch(0.929 0.013 255.508);
   --ring: oklch(0.704 0.04 256.788);
   --chart-1: oklch(0.646 0.222 41.116);
@@ -157,6 +156,11 @@
 
   body {
     background-color: var(--color-paper);
+    background-image:
+      radial-gradient(60rem 40rem at 12% -10%, oklch(0.85 0.12 230 / 0.55), transparent 60%),
+      radial-gradient(50rem 35rem at 110% 10%, oklch(0.78 0.16 252 / 0.35), transparent 60%),
+      radial-gradient(45rem 30rem at 50% 110%, oklch(0.9 0.08 220 / 0.5), transparent 60%);
+    background-attachment: fixed;
     color: var(--color-ink);
     font-family: var(--font-sans);
     font-feature-settings: "ss01", "cv11";
@@ -165,8 +169,8 @@
 
   h1, h2, h3, h4 {
     font-family: var(--font-display);
-    font-weight: 500;
-    letter-spacing: -0.01em;
+    font-weight: 600;
+    letter-spacing: -0.02em;
   }
 }
 
@@ -177,13 +181,37 @@
   text-transform: uppercase;
   letter-spacing: 0.22em;
   color: var(--gold);
-  font-weight: 500;
+  font-weight: 600;
 }
 
 @utility hairline {
   height: 1px;
   width: 100%;
-  background: var(--hairline);
+  background: linear-gradient(to right, transparent, var(--hairline), transparent);
+}
+
+@utility glass {
+  background: color-mix(in oklab, white 60%, transparent);
+  backdrop-filter: blur(18px) saturate(150%);
+  border: 1px solid color-mix(in oklab, white 70%, transparent);
+  box-shadow:
+    0 1px 0 color-mix(in oklab, white 80%, transparent) inset,
+    0 20px 50px -20px color-mix(in oklab, var(--ink) 25%, transparent);
+}
+
+@utility glass-strong {
+  background: color-mix(in oklab, white 75%, transparent);
+  backdrop-filter: blur(24px) saturate(160%);
+  border: 1px solid color-mix(in oklab, white 80%, transparent);
+  box-shadow: 0 10px 40px -20px color-mix(in oklab, var(--ink) 30%, transparent);
+}
+
+@utility blob {
+  position: absolute;
+  border-radius: 9999px;
+  filter: blur(60px);
+  opacity: 0.55;
+  pointer-events: none;
 }
 
 @utility link-underline {
