@@ -1,6 +1,7 @@
 import { Link, useRouterState } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
-import { LogIn } from "lucide-react";
+import ilinkLogo from "@/assets/ilinklogo.png";
+
 
 const links = [
   { to: "/", label: "Home" },
@@ -31,14 +32,9 @@ export function SiteHeader() {
       }`}
     >
       <div className="mx-auto flex max-w-[1400px] items-center justify-between px-6 py-5 md:px-10">
-        <Link to="/" className="group flex items-center gap-3" aria-label="I Link home">
-          <span className="grid h-9 w-9 place-items-center rounded-full border border-white/40 bg-white/5 text-ink transition group-hover:border-gold group-hover:text-gold">
-            <span className="font-display text-lg leading-none">i</span>
-          </span>
-          <span className="flex flex-col leading-none">
-            <span className="font-display text-lg tracking-tight text-ink">I Link Global</span>
-            <span className="text-[10px] uppercase tracking-[0.28em] text-slate">Holdings</span>
-          </span>
+        <Link to="/" className="group flex items-center gap-3" aria-label="i Link home">
+          <img src={ilinkLogo} alt="i Link logo" className="h-9 w-9 object-contain transition group-hover:brightness-125" />
+
         </Link>
 
         <nav className="hidden items-center gap-8 lg:flex" aria-label="Primary">
@@ -58,11 +54,7 @@ export function SiteHeader() {
           })}
         </nav>
 
-        <div className="hidden items-center gap-3 lg:flex">
-          <a href="#login" className="glass-btn">
-            <LogIn className="h-3.5 w-3.5" /> Login to Dashboard
-          </a>
-        </div>
+
 
         <button
           type="button"

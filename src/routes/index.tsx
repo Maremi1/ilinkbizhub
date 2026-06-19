@@ -1,20 +1,19 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { motion, type Variants } from "motion/react";
 import {
-  ArrowRight, Search, Handshake, ShieldCheck, Sparkles,
+  ArrowRight, Handshake, ShieldCheck,
   Users, Globe2,
 } from "lucide-react";
 import { RotatingVault } from "@/components/RotatingVault";
 import { Reveal } from "@/components/Reveal";
 import { clusters } from "@/lib/platforms";
-import { useMemo, useState } from "react";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "The I Link Ecosystem — Unified Platform Vault" },
-      { name: "description", content: "Master entry point to the I Link ecosystem: Fintech, Insuretech, Real Estate, E-Commerce, Logistics, Extractives and Professional Services platforms." },
-      { property: "og:title", content: "The I Link Ecosystem" },
+      { title: "The i Link Ecosystem — Unified Platform Vault" },
+      { name: "description", content: "Master entry point to the i Link ecosystem: Fintech, Insuretech, Real Estate, E-Commerce, Logistics, Extractives and Professional Services platforms." },
+      { property: "og:title", content: "The i Link Ecosystem" },
       { property: "og:description", content: "A diversified ecosystem of high-impact proprietary platforms and sector-specific licenses." },
       { property: "og:url", content: "/" },
     ],
@@ -33,14 +32,6 @@ const item: Variants = {
 };
 
 function Home() {
-  const [query, setQuery] = useState("");
-  const filtered = useMemo(() => {
-    const q = query.trim().toLowerCase();
-    if (!q) return clusters;
-    return clusters
-      .map((c) => ({ ...c, platforms: c.platforms.filter((p) => (p.name + " " + p.description + " " + c.title).toLowerCase().includes(q)) }))
-      .filter((c) => c.platforms.length > 0);
-  }, [query]);
 
   return (
     <div className="overflow-hidden">
@@ -53,31 +44,16 @@ function Home() {
 
         <div className="mx-auto w-full max-w-[1400px] px-6 md:px-10">
           <motion.div variants={container} initial="hidden" animate="show" className="mx-auto max-w-3xl text-center">
-            <motion.span variants={item} className="eyebrow inline-flex items-center gap-2">
-              <Sparkles className="h-3.5 w-3.5" /> The Vault · Unified Platform Hub
-            </motion.span>
+
             <motion.h1 variants={item} className="mt-6 font-display text-[clamp(2.6rem,7vw,6rem)] leading-[1.02] tracking-tight text-ink">
-              The <span className="text-gold">I Link</span> Ecosystem
+              The <span className="text-gold">i Link</span> Ecosystem
             </motion.h1>
             <motion.p variants={item} className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-slate md:text-lg">
               A diversified ecosystem of high-impact proprietary platforms and
               sector-specific licenses — one master entry point to every venture.
             </motion.p>
 
-            {/* Search */}
-            <motion.div variants={item} className="mx-auto mt-10 max-w-xl">
-              <label className="glass-strong flex items-center gap-3 rounded-full px-5 py-3">
-                <Search className="h-4 w-4 text-gold" />
-                <input
-                  type="search"
-                  value={query}
-                  onChange={(e) => setQuery(e.target.value)}
-                  placeholder="Search a company or service — try ‘insurance’ or ‘logistics’"
-                  className="w-full bg-transparent text-sm text-ink placeholder:text-slate/70 focus:outline-none"
-                  aria-label="Search the I Link ecosystem"
-                />
-              </label>
-            </motion.div>
+
 
             <motion.div variants={item} className="mt-10 flex flex-wrap items-center justify-center gap-3">
               <a href="#platforms" className="inline-flex items-center gap-2 rounded-full bg-gold px-6 py-3 text-[12px] uppercase tracking-[0.22em] text-[oklch(0.16_0.04_220)] transition hover:opacity-90">
@@ -100,12 +76,12 @@ function Home() {
           </div>
           <p className="max-w-sm text-sm text-slate">
             Each platform is independently licensed and operated, backed by the
-            shared I Link Global IP and governance framework.
+            shared i Link Global IP and governance framework.
           </p>
         </div>
 
         <div className="mt-16 space-y-20">
-          {filtered.map((cluster, ci) => (
+          {clusters.map((cluster, ci) => (
             <Reveal key={cluster.id}>
               <div>
                 <div className="mb-8 flex items-baseline gap-4">
@@ -142,9 +118,15 @@ function Home() {
                       )}
                       <div className="mt-6 flex flex-wrap gap-2">
                         {p.ctas.map((c) => (
-                          <a key={c.label} href={c.href} target="_blank" rel="noopener noreferrer" className="glass-btn">
-                            <Handshake className="h-3 w-3" /> {c.label}
-                          </a>
+                          c.href ? (
+                            <a key={c.label} href={c.href} target="_blank" rel="noopener noreferrer" className="glass-btn">
+                              <Handshake className="h-3 w-3" /> {c.label}
+                            </a>
+                          ) : (
+                            <span key={c.label} className="glass-btn cursor-not-allowed border-hairline/50 text-slate hover:bg-transparent">
+                              <Handshake className="h-3 w-3 opacity-50" /> {c.label}
+                            </span>
+                          )
                         ))}
                       </div>
                       {/* inner glow */}
@@ -153,12 +135,10 @@ function Home() {
                   ))}
                 </div>
               </div>
-              {ci < filtered.length - 1 && <div className="hairline mt-16" />}
+              {ci < clusters.length - 1 && <div className="hairline mt-16" />}
             </Reveal>
           ))}
-          {filtered.length === 0 && (
-            <p className="py-12 text-center text-sm text-slate">No platforms match “{query}”.</p>
-          )}
+
         </div>
       </section>
 
@@ -186,9 +166,9 @@ function Home() {
                 Management system for the 451+ Ambassadors driving last-mile
                 financial inclusion across Rwanda and beyond.
               </p>
-              <a href="https://fia.ilinkbiz.com" target="_blank" rel="noopener noreferrer" className="mt-8 inline-flex items-center gap-2 rounded-full bg-gold px-6 py-3 text-[12px] uppercase tracking-[0.22em] text-[oklch(0.16_0.04_220)] transition hover:opacity-90">
-                <Handshake className="h-4 w-4" /> Access Management System
-              </a>
+              <span className="mt-8 inline-flex cursor-not-allowed items-center gap-2 rounded-full bg-gold/50 px-6 py-3 text-[12px] uppercase tracking-[0.22em] text-[oklch(0.16_0.04_220)]/50">
+                <Handshake className="h-4 w-4" /> Access Management System (Coming Soon)
+              </span>
             </motion.div>
           </Reveal>
 
@@ -208,9 +188,9 @@ function Home() {
                 An INGO redirecting a portion of group profit into mechanisms for
                 socio-economic empowerment and community resilience.
               </p>
-              <Link to="/foundation" className="mt-8 inline-flex items-center gap-2 rounded-full border border-white/30 bg-white/5 px-6 py-3 text-[12px] uppercase tracking-[0.22em] text-ink transition hover:bg-white hover:text-[oklch(0.16_0.04_220)]">
-                <Handshake className="h-4 w-4" /> See Global Initiatives
-              </Link>
+              <span className="mt-8 inline-flex cursor-not-allowed items-center gap-2 rounded-full border border-white/10 bg-white/5 px-6 py-3 text-[12px] uppercase tracking-[0.22em] text-ink/50">
+                <Handshake className="h-4 w-4" /> See Global Initiatives (Coming Soon)
+              </span>
             </motion.div>
           </Reveal>
         </div>

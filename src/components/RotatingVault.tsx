@@ -2,7 +2,7 @@ import { motion } from "motion/react";
 
 /**
  * The Vault — slowly rotating geometric wireframe representing
- * I Link's diversified ecosystem architecture.
+ * i Link's diversified ecosystem architecture.
  */
 export function RotatingVault({ className = "" }: { className?: string }) {
   return (

@@ -22,7 +22,11 @@ export function EntityCard({ entity, index = 0 }: { entity: Entity; index?: numb
           {isLive ? "Live" : "Coming soon"}
         </span>
       </div>
-      <h3 className="mt-8 font-display text-3xl leading-tight text-ink">{entity.name}</h3>
+      {entity.logo ? (
+        <img src={entity.logo} alt={entity.name} className="mt-8 h-14 object-contain object-left" />
+      ) : (
+        <h3 className="mt-8 font-display text-3xl leading-tight text-ink">{entity.name}</h3>
+      )}
       <p className="mt-2 font-display text-base italic text-slate">{entity.tagline}</p>
       <p className="mt-6 text-sm leading-relaxed text-ink/75">{entity.blurb}</p>
       <div className="mt-8 flex-1" />

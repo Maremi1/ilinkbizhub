@@ -7,7 +7,7 @@ export function SiteFooter() {
       <div className="mx-auto max-w-[1400px] px-6 py-20 md:px-10">
         <div className="grid gap-16 lg:grid-cols-[1.2fr_1fr_1fr_1fr]">
           <div>
-            <Link to="/" className="font-display text-3xl text-ink">I Link Group</Link>
+            <Link to="/" className="font-display text-3xl text-ink">i Link Group</Link>
             <p className="mt-5 max-w-sm text-sm leading-relaxed text-slate">
               A diversified holding architecture connecting global capital, proprietary IP and national execution across Africa and beyond.
             </p>
@@ -53,7 +53,7 @@ export function SiteFooter() {
         </div>
 
         <div className="mt-16 flex flex-col items-start justify-between gap-4 border-t border-hairline pt-8 text-xs uppercase tracking-[0.22em] text-slate md:flex-row md:items-center">
-          <span>© {new Date().getFullYear()} I Link Group. All rights reserved.</span>
+          <span>© {new Date().getFullYear()} i Link Group. All rights reserved.</span>
           <span>Bridging capital · innovation · markets</span>
         </div>
       </div>

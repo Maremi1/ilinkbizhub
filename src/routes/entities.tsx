@@ -6,9 +6,9 @@ import { entities } from "@/lib/entities";
 export const Route = createFileRoute("/entities")({
   head: () => ({
     meta: [
-      { title: "Group Entities — I Link" },
-      { name: "description", content: "Explore every entity in the I Link Group — Global, International, Rwanda, Tanzania, The Founder, Ghana, Ethiopia — each with its own dedicated subsite." },
-      { property: "og:title", content: "Group Entities — I Link" },
+      { title: "Group Entities — i Link" },
+      { name: "description", content: "Explore every entity in the i Link Group — Global, International, Rwanda, Tanzania, The Founder, Ghana, Ethiopia — each with its own dedicated subsite." },
+      { property: "og:title", content: "Group Entities — i Link" },
       { property: "og:url", content: "/entities" },
     ],
     links: [{ rel: "canonical", href: "/entities" }],

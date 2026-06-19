@@ -3,8 +3,8 @@ import { motion } from "motion/react";
 // Interactive 3-tier diamond: Global → International → National
 export function Diamond() {
   const tiers = [
-    { id: "global", label: "I Link Global", role: "IP Holding & Licensing", w: 280 },
-    { id: "intl", label: "I Link International", role: "Strategic Management", w: 420 },
+    { id: "global", label: "i Link Global", role: "IP Holding & Licensing", w: 280 },
+    { id: "intl", label: "i Link International", role: "Strategic Management", w: 420 },
     { id: "nat", label: "National Operating Companies", role: "Local Execution", w: 560 },
   ];
 

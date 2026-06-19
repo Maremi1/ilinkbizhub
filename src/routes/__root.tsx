@@ -81,20 +81,25 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "I Link Group — Bridging Capital, Innovation and Global Markets" },
-      { name: "description", content: "I Link Group is a diversified holding architecture connecting global capital, proprietary IP and national execution across Africa and beyond." },
-      { name: "author", content: "I Link Group" },
-      { property: "og:site_name", content: "I Link Group" },
-      { property: "og:title", content: "I Link Group — Bridging Capital, Innovation and Global Markets" },
-      { property: "og:description", content: "I Link Group is a diversified holding architecture connecting global capital, proprietary IP and national execution across Africa and beyond." },
+      { title: "i Link Group — Bridging Capital, Innovation and Global Markets" },
+      { name: "description", content: "i Link Group is a diversified holding architecture connecting global capital, proprietary IP and national execution across Africa and beyond." },
+      { name: "author", content: "i Link Group" },
+      { property: "og:site_name", content: "i Link Group" },
+      { property: "og:title", content: "i Link Group — Bridging Capital, Innovation and Global Markets" },
+      { property: "og:description", content: "i Link Group is a diversified holding architecture connecting global capital, proprietary IP and national execution across Africa and beyond." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
-      { name: "twitter:title", content: "I Link Group — Bridging Capital, Innovation and Global Markets" },
-      { name: "twitter:description", content: "I Link Group is a diversified holding architecture connecting global capital, proprietary IP and national execution across Africa and beyond." },
-      { property: "og:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/21YdZ7qk8aTbAUB3cOSCXiFbFkC2/social-images/social-1781874062768-WhatsApp_Image_2026-04-09_at_13.31.34.webp" },
-      { name: "twitter:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/21YdZ7qk8aTbAUB3cOSCXiFbFkC2/social-images/social-1781874062768-WhatsApp_Image_2026-04-09_at_13.31.34.webp" },
+      { name: "twitter:title", content: "i Link Group — Bridging Capital, Innovation and Global Markets" },
+      { name: "twitter:description", content: "i Link Group is a diversified holding architecture connecting global capital, proprietary IP and national execution across Africa and beyond." },
+      { property: "og:image", content: "https://global.ilinkbiz.com/logo.png" },
+      { name: "twitter:image", content: "https://global.ilinkbiz.com/logo.png" },
     ],
     links: [
+      {
+        rel: "icon",
+        type: "image/png",
+        href: "/favicon.png",
+      },
       {
         rel: "stylesheet",
         href: appCss,
@@ -114,6 +119,22 @@ function RootShell({ children }: { children: ReactNode }) {
         <HeadContent />
       </head>
       <body>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              name: "i Link Group",
+              url: "https://global.ilinkbiz.com",
+              logo: "https://global.ilinkbiz.com/logo.png",
+              sameAs: [
+                "https://www.linkedin.com/company/ilinkbiz",
+                "https://twitter.com/ilinkbiz"
+              ]
+            })
+          }}
+        />
         {children}
         <Scripts />
       </body>

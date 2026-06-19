@@ -5,9 +5,9 @@ import { Reveal } from "@/components/Reveal";
 export const Route = createFileRoute("/services")({
   head: () => ({
     meta: [
-      { title: "Services — I Link Group" },
-      { name: "description", content: "Consultancy, iLink Academy, Strategic Investment and proprietary Technology platforms — the four pillars of the I Link service architecture." },
-      { property: "og:title", content: "Services — I Link Group" },
+      { title: "Services — i Link Group" },
+      { name: "description", content: "Consultancy, i Link Academy, Strategic Investment and proprietary Technology platforms — the four pillars of the i Link service architecture." },
+      { property: "og:title", content: "Services — i Link Group" },
       { property: "og:url", content: "/services" },
     ],
     links: [{ rel: "canonical", href: "/services" }],
@@ -24,7 +24,7 @@ const sections = [
   },
   {
     n: "02", icon: GraduationCap,
-    t: "iLink Academy — Human Capital",
+    t: "i Link Academy — Human Capital",
     d: "Bridging the skills gap for the Fourth Industrial Revolution through executive transformation programmes.",
     items: ["Digital transformation curricula", "Leadership & EQ for global corporate leaders", "Sales Accelerator 2026 — the modern African closer", "Training of Trainers (ToT) certification", "Specialist climate & financial inclusion modules"],
   },

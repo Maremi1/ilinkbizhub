@@ -5,8 +5,8 @@ import foundationImg from "@/assets/foundation.jpg";
 export const Route = createFileRoute("/foundation")({
   head: () => ({
     meta: [
-      { title: "Mama Mia's Foundation — I Link Group" },
-      { name: "description", content: "The philanthropic arm of the I Link Group — catalysing sustainable socio-economic empowerment, humanitarian support and community resilience." },
+      { title: "Mama Mia's Foundation — i Link Group" },
+      { name: "description", content: "The philanthropic arm of the i Link Group — catalysing sustainable socio-economic empowerment, humanitarian support and community resilience." },
       { property: "og:title", content: "Mama Mia's Foundation" },
       { property: "og:url", content: "/foundation" },
     ],
@@ -35,7 +35,7 @@ function Foundation() {
               From profit, <span className="text-gold">to people.</span>
             </h1>
             <p className="mt-8 max-w-2xl text-base leading-relaxed text-slate">
-              Operating as an International NGO, the foundation transforms I Link's strategic
+              Operating as an International NGO, the foundation transforms i Link's strategic
               objectives into measurable, life-changing outcomes — moving beyond charity to create
               mechanisms for sustainable socio-economic empowerment.
             </p>

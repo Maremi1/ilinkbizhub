@@ -4,9 +4,9 @@ import { Reveal } from "@/components/Reveal";
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
-      { title: "Contact — I Link Group" },
-      { name: "description", content: "Reach the I Link Group head offices in Kigali and Dar es Salaam, or contact the right entity directly." },
-      { property: "og:title", content: "Contact — I Link Group" },
+      { title: "Contact — i Link Group" },
+      { name: "description", content: "Reach the i Link Group head offices in Kigali and Dar es Salaam, or contact the right entity directly." },
+      { property: "og:title", content: "Contact — i Link Group" },
       { property: "og:url", content: "/contact" },
     ],
     links: [{ rel: "canonical", href: "/contact" }],
@@ -16,7 +16,7 @@ export const Route = createFileRoute("/contact")({
 
 const offices = [
   { city: "Kigali · Rwanda", role: "Regional Headquarters", addr: "Vision Arcade Executive Suites\nKG 379 and KG 9 Avenue, Kigali", phone: "+250 793 146 087" },
-  { city: "Dar es Salaam · Tanzania", role: "Operational Base", addr: "I Link Tanzania\nDar es Salaam", phone: "+255 765 658 595" },
+  { city: "Dar es Salaam · Tanzania", role: "Operational Base", addr: "i Link Tanzania\nDar es Salaam", phone: "+255 765 658 595" },
 ];
 
 function Contact() {
@@ -51,9 +51,18 @@ function Contact() {
           <Reveal delay={0.1}>
             <form
               className="glass rounded-3xl p-8 md:p-10"
-              action="mailto:info@ilinkbiz.com"
-              method="post"
-              encType="text/plain"
+              onSubmit={(e) => {
+                e.preventDefault();
+                const formData = new FormData(e.currentTarget);
+                const name = formData.get("name") || "Not provided";
+                const company = formData.get("company") || "Not provided";
+                const email = formData.get("email") || "Not provided";
+                const country = formData.get("country") || "Not provided";
+                const message = formData.get("message") || "No message";
+
+                const text = `*New i Link Enquiry*\n\n*Name:* ${name}\n*Company:* ${company}\n*Email:* ${email}\n*Country:* ${country}\n\n*Message:*\n${message}`;
+                window.open(`https://wa.me/255765658595?text=${encodeURIComponent(text)}`, "_blank");
+              }}
             >
               <p className="eyebrow">Send a message</p>
               <div className="mt-8 grid gap-6 sm:grid-cols-2">

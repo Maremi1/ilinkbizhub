@@ -3,7 +3,7 @@ export type Platform = {
   cluster: string;
   description: string;
   badge?: string;
-  ctas: { label: string; href: string }[];
+  ctas: { label: string; href?: string }[];
 };
 
 export type Cluster = {
@@ -35,7 +35,8 @@ export const clusters: Cluster[] = [
         name: "iBank",
         cluster: "fintech",
         description: "Robust financial infrastructure for digital inclusion.",
-        ctas: [{ label: "Visit Platform", href: "https://ibank.ilinkbiz.com" }],
+        badge: "Under Development",
+        ctas: [{ label: "Visit Platform" }],
       },
     ],
   },
@@ -49,7 +50,8 @@ export const clusters: Cluster[] = [
         name: "myEstate",
         cluster: "realestate",
         description: "Proprietary digital management for real estate and urban property.",
-        ctas: [{ label: "Explore Assets", href: "https://myestate.ilinkbiz.com" }],
+        badge: "Under Development",
+        ctas: [{ label: "Explore Assets" }],
       },
     ],
   },
@@ -63,16 +65,18 @@ export const clusters: Cluster[] = [
         name: "Mama Mia's Soko",
         cluster: "ecommerce",
         description: "Integrated Manufacturer-to-Consumer (M2C) marketplace.",
+        badge: "Under Development",
         ctas: [
-          { label: "Shop Now", href: "https://soko.mamamias.com" },
-          { label: "Vendor Login", href: "https://soko.mamamias.com/vendor" },
+          { label: "Shop Now" },
+          { label: "Vendor Login" },
         ],
       },
       {
         name: "Dunamis Delivery",
         cluster: "ecommerce",
         description: "Specialized logistics arm for Pan-African trade.",
-        ctas: [{ label: "Track Order", href: "https://dunamis.ilinkbiz.com" }],
+        badge: "Under Development",
+        ctas: [{ label: "Track Order" }],
       },
     ],
   },
@@ -86,7 +90,8 @@ export const clusters: Cluster[] = [
         name: "iMine / iSupply",
         cluster: "extractives",
         description: "Managing resource distribution and ethical mineral supply chains.",
-        ctas: [{ label: "B2B Portal", href: "https://imine.ilinkbiz.com" }],
+        badge: "Under Development",
+        ctas: [{ label: "B2B Portal" }],
       },
     ],
   },
@@ -100,13 +105,15 @@ export const clusters: Cluster[] = [
         name: "iClean",
         cluster: "services",
         description: "Smart tech-enabled facility management.",
-        ctas: [{ label: "Book Service", href: "https://iclean.ilinkbiz.com" }],
+        badge: "Under Development",
+        ctas: [{ label: "Book Service" }],
       },
       {
         name: "Atomic Star",
         cluster: "services",
         description: "Executive consultancy and technical oversight.",
-        ctas: [{ label: "Company Profile", href: "https://atomicstar.ilinkbiz.com" }],
+        badge: "Under Development",
+        ctas: [{ label: "Company Profile" }],
       },
     ],
   },

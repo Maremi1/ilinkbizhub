@@ -1,6 +1,15 @@
+import globalLogo from "@/assets/Global-ilinklogo-removebg-preview.png";
+import internationalLogo from "@/assets/internationailinklogo.png";
+import rwandaLogo from "@/assets/ilinkrwandalogo2.png";
+import tanzaniaLogo from "@/assets/ilinktanzanialogo.png";
+import founderLogo from "@/assets/thefounderlogo.jpeg";
+import ghanaLogo from "@/assets/ghanailink-removebg-preview.png";
+import ethiopiaLogo from "@/assets/ilinkethiopia-removebg-preview.png";
+
 export type Entity = {
   slug: string;
   name: string;
+  logo?: string;
   tagline: string;
   blurb: string;
   url: string;
@@ -11,7 +20,8 @@ export type Entity = {
 export const entities: Entity[] = [
   {
     slug: "global",
-    name: "I Link Global",
+    name: "i Link Global",
+    logo: globalLogo,
     tagline: "The IP Holding & Licensing Engine",
     blurb:
       "Custodian of the group's intellectual property, trademarks, methodologies and AI systems — licensed to national operating companies worldwide.",
@@ -21,7 +31,8 @@ export const entities: Entity[] = [
   },
   {
     slug: "international",
-    name: "I Link International",
+    name: "i Link International",
+    logo: internationalLogo,
     tagline: "Strategic Management & Investment",
     blurb:
       "A diversified holding entity bridging international capital to emerging market opportunities through MSD, digital transformation and high-impact investment.",
@@ -31,7 +42,8 @@ export const entities: Entity[] = [
   },
   {
     slug: "rwanda",
-    name: "I Link Rwanda",
+    name: "i Link Rwanda",
+    logo: rwandaLogo,
     tagline: "Architecting Rwanda's Digital & Financial Future",
     blurb:
       "A 361-degree consultancy fusing technology, strategy and innovation to drive financial inclusion — Lead Partner of Rwanda's FIA Network reaching 1.8M+ households.",
@@ -41,7 +53,8 @@ export const entities: Entity[] = [
   },
   {
     slug: "tanzania",
-    name: "I Link Tanzania",
+    name: "i Link Tanzania",
+    logo: tanzaniaLogo,
     tagline: "Bridging Ideas with Reality",
     blurb:
       "Sixteen specialised brands across Finance & Tech, Resources & Infrastructure, Trade & Logistics and Professional Services — bespoke ICT and marketing solutions.",
@@ -52,6 +65,7 @@ export const entities: Entity[] = [
   {
     slug: "founder",
     name: "The Founder",
+    logo: founderLogo,
     tagline: "Secure Your Legacy. Structure Your Wealth.",
     blurb:
       "Management consultancy specialising in Family Trust setup, corporate structuring and ongoing advisory — privacy, succession certainty, asset protection.",
@@ -61,20 +75,22 @@ export const entities: Entity[] = [
   },
   {
     slug: "ghana",
-    name: "I Link Ghana",
+    name: "i Link Ghana",
+    logo: ghanaLogo,
     tagline: "West African Operating Node",
     blurb:
-      "A registered national operating company executing the I Link Global strategy under local Ghanaian jurisdiction.",
+      "A registered national operating company executing the i Link Global strategy under local Ghanaian jurisdiction.",
     url: "#",
     status: "soon",
     region: "Accra, Ghana",
   },
   {
     slug: "ethiopia",
-    name: "I Link Ethiopia",
+    name: "i Link Ethiopia",
+    logo: ethiopiaLogo,
     tagline: "Horn of Africa Operating Node",
     blurb:
-      "A registered national operating company executing the I Link Global strategy under local Ethiopian jurisdiction.",
+      "A registered national operating company executing the i Link Global strategy under local Ethiopian jurisdiction.",
     url: "#",
     status: "soon",
     region: "Addis Ababa, Ethiopia",

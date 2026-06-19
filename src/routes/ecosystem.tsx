@@ -6,9 +6,9 @@ import { ValueLoop } from "@/components/ValueLoop";
 export const Route = createFileRoute("/ecosystem")({
   head: () => ({
     meta: [
-      { title: "Ecosystem — The I Link Holding Architecture" },
+      { title: "Ecosystem — The i Link Holding Architecture" },
       { name: "description", content: "Global IP holding, International strategic management, and national operating companies — engineered for scale and security." },
-      { property: "og:title", content: "Ecosystem — I Link Group" },
+      { property: "og:title", content: "Ecosystem — i Link Group" },
       { property: "og:url", content: "/ecosystem" },
     ],
     links: [{ rel: "canonical", href: "/ecosystem" }],
@@ -17,8 +17,8 @@ export const Route = createFileRoute("/ecosystem")({
 });
 
 const tiers = [
-  { t: "I Link Global", f: "IP Holding & Licensing", a: "Intangible assets — IP, Trademarks, AI", r: "Royalties & licensing fees", s: "Worldwide" },
-  { t: "I Link International", f: "Strategic Management & Investment Coordination", a: "Equity (shares in subsidiaries)", r: "Dividends & management fees", s: "Continental / Regional" },
+  { t: "i Link Global", f: "IP Holding & Licensing", a: "Intangible assets — IP, Trademarks, AI", r: "Royalties & licensing fees", s: "Worldwide" },
+  { t: "i Link International", f: "Strategic Management & Investment Coordination", a: "Equity (shares in subsidiaries)", r: "Dividends & management fees", s: "Continental / Regional" },
   { t: "National Operating Companies", f: "Local Execution & Service Delivery", a: "Physical assets & local contracts", r: "Direct sales, grants, trading revenue", s: "National jurisdictions" },
 ];
 

@@ -2,14 +2,14 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Reveal } from "@/components/Reveal";
 import kigaliImg from "@/assets/kigali.jpg";
 import darImg from "@/assets/dar.jpg";
-import handshakeImg from "@/assets/handshake.jpg";
+import ilinkPic from "@/assets/ilinkpic.jpg";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
-      { title: "About — I Link Group" },
-      { name: "description", content: "Vision, mission and philosophy of the I Link Group — institutional excellence across borders." },
-      { property: "og:title", content: "About — I Link Group" },
+      { title: "About — i Link Group" },
+      { name: "description", content: "Vision, mission and philosophy of the i Link Group — institutional excellence across borders." },
+      { property: "og:title", content: "About — i Link Group" },
       { property: "og:url", content: "/about" },
     ],
     links: [{ rel: "canonical", href: "/about" }],
@@ -30,11 +30,11 @@ function About() {
 
         <div className="mt-20 grid gap-16 lg:grid-cols-[1fr_1.4fr]">
           <Reveal>
-            <img src={handshakeImg} alt="Handshake in a refined boardroom" width={1400} height={900} loading="lazy" className="h-full max-h-[34rem] w-full object-cover" />
+            <img src={ilinkPic} alt="Business partnership handshake" width={1400} height={900} loading="lazy" className="h-full max-h-[34rem] w-full object-cover" />
           </Reveal>
           <Reveal delay={0.1}>
             <p className="font-display text-2xl leading-snug text-ink md:text-3xl">
-              I Link is a diversified holding entity dedicated to catalysing sustainable economic growth and institutional excellence — a critical bridge between international capital and emerging market opportunity.
+              i Link is a diversified holding entity dedicated to catalysing sustainable economic growth and institutional excellence — a critical bridge between international capital and emerging market opportunity.
             </p>
             <div className="hairline my-10" />
             <div className="grid gap-10 sm:grid-cols-2">
@@ -67,7 +67,7 @@ function About() {
         <div className="mt-12 grid gap-10 md:grid-cols-2">
           {[
             { img: kigaliImg, city: "Kigali, Rwanda", role: "Regional Headquarters", addr: "Vision Arcade Executive Suites · KG 9 Avenue" },
-            { img: darImg, city: "Dar es Salaam, Tanzania", role: "Operational Base", addr: "I Link Tanzania · Group operations" },
+            { img: darImg, city: "Dar es Salaam, Tanzania", role: "Operational Base", addr: "i Link Tanzania · Group operations" },
           ].map((c, i) => (
             <Reveal key={c.city} delay={i * 0.1}>
               <div className="group relative overflow-hidden">
@@ -91,7 +91,7 @@ function About() {
           </Reveal>
           <Reveal delay={0.1}>
             <p className="text-base leading-relaxed text-slate">
-              The Founder — the group's management consultancy arm — embodies the I Link ethos: how
+              The Founder — the group's management consultancy arm — embodies the i Link ethos: how
               you structure and protect your assets today defines your legacy tomorrow. From family
               trust setup and corporate structuring to ongoing governance advisory, the practice
               gives high-net-worth families, entrepreneurs and institutions a cohesive strategy to
