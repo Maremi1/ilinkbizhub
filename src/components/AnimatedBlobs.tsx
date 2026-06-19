@@ -1,9 +1,9 @@
 import { motion } from "motion/react";
 
 const blobs = [
-  { cls: "left-[-10%] top-[8%] h-[28rem] w-[28rem] bg-[oklch(0.78_0.16_232)]", d: 22, x: 40, y: 30 },
-  { cls: "right-[-8%] top-[38%] h-[34rem] w-[34rem] bg-[oklch(0.72_0.18_252)]", d: 28, x: -50, y: 40 },
-  { cls: "left-[18%] bottom-[-12%] h-[26rem] w-[26rem] bg-[oklch(0.85_0.1_220)]", d: 26, x: 30, y: -50 },
+  { cls: "left-[-12%] top-[6%] h-[32rem] w-[32rem] bg-[oklch(0.55_0.13_220)]", d: 22, x: 40, y: 30 },
+  { cls: "right-[-10%] top-[36%] h-[36rem] w-[36rem] bg-[oklch(0.40_0.12_235)]", d: 28, x: -50, y: 40 },
+  { cls: "left-[20%] bottom-[-14%] h-[28rem] w-[28rem] bg-[oklch(0.60_0.14_215)]", d: 26, x: 30, y: -50 },
 ];
 
 export function AnimatedBlobs() {

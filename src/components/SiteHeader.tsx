@@ -1,14 +1,12 @@
 import { Link, useRouterState } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
-import { ThemeToggle } from "./ThemeToggle";
+import { LogIn } from "lucide-react";
 
 const links = [
   { to: "/", label: "Home" },
-  { to: "/about", label: "About" },
-  { to: "/ecosystem", label: "Ecosystem" },
-  { to: "/entities", label: "Entities" },
-  { to: "/services", label: "Services" },
-  { to: "/foundation", label: "Foundation" },
+  { to: "/entities", label: "All Platforms" },
+  { to: "/ecosystem", label: "Global Stats" },
+  { to: "/about", label: "Regional Partners" },
   { to: "/contact", label: "Contact" },
 ] as const;
 
@@ -29,17 +27,17 @@ export function SiteHeader() {
   return (
     <header
       className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ${
-        scrolled ? "glass-strong border-b border-white/40" : "bg-transparent"
+        scrolled ? "glass-strong border-b border-white/15" : "bg-transparent"
       }`}
     >
       <div className="mx-auto flex max-w-[1400px] items-center justify-between px-6 py-5 md:px-10">
         <Link to="/" className="group flex items-center gap-3" aria-label="I Link home">
-          <span className="grid h-9 w-9 place-items-center rounded-full border border-ink/80 text-ink transition group-hover:border-gold group-hover:text-gold">
+          <span className="grid h-9 w-9 place-items-center rounded-full border border-white/40 bg-white/5 text-ink transition group-hover:border-gold group-hover:text-gold">
             <span className="font-display text-lg leading-none">i</span>
           </span>
           <span className="flex flex-col leading-none">
-            <span className="font-display text-lg tracking-tight text-ink">I Link</span>
-            <span className="text-[10px] uppercase tracking-[0.28em] text-slate">Group</span>
+            <span className="font-display text-lg tracking-tight text-ink">I Link Global</span>
+            <span className="text-[10px] uppercase tracking-[0.28em] text-slate">Holdings</span>
           </span>
         </Link>
 
@@ -61,12 +59,8 @@ export function SiteHeader() {
         </nav>
 
         <div className="hidden items-center gap-3 lg:flex">
-          <ThemeToggle />
-          <a
-            href="mailto:info@ilinkbiz.com"
-            className="inline-flex items-center gap-2 rounded-full bg-gold px-5 py-2 text-[12px] uppercase tracking-[0.22em] text-[oklch(0.16_0.045_252)] transition hover:opacity-90"
-          >
-            Partner with us
+          <a href="#login" className="glass-btn">
+            <LogIn className="h-3.5 w-3.5" /> Login to Dashboard
           </a>
         </div>
 
