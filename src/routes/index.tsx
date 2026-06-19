@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { motion } from "motion/react";
+import { motion, type Variants } from "motion/react";
+import { ArrowRight, Compass, Globe2, Building2, Sparkles } from "lucide-react";
 import { AnimatedMap } from "@/components/AnimatedMap";
 import { EntityCard } from "@/components/EntityCard";
 import { Reveal } from "@/components/Reveal";
@@ -21,11 +22,20 @@ export const Route = createFileRoute("/")({
 });
 
 const pillars = [
-  { n: "01", t: "Global Consultancy", d: "Business development, corporate restructuring, M&A and board representation." },
-  { n: "02", t: "iLink Academy", d: "Executive training in digital transformation, leadership and advanced sales." },
-  { n: "03", t: "Strategic Investment", d: "Venture capital, private equity, IP & royalty management across jurisdictions." },
-  { n: "04", t: "Technology Solutions", d: "Fintech, EdTech, Smart Infrastructure, KYC and cybersecurity platforms." },
+  { n: "01", t: "Global Consultancy", d: "Business development, corporate restructuring, M&A and board representation.", icon: Globe2 },
+  { n: "02", t: "iLink Academy", d: "Executive training in digital transformation, leadership and advanced sales.", icon: Compass },
+  { n: "03", t: "Strategic Investment", d: "Venture capital, private equity, IP & royalty management across jurisdictions.", icon: Building2 },
+  { n: "04", t: "Technology Solutions", d: "Fintech, EdTech, Smart Infrastructure, KYC and cybersecurity platforms.", icon: Sparkles },
 ];
+
+const container: Variants = {
+  hidden: {},
+  show: { transition: { staggerChildren: 0.12, delayChildren: 0.1 } },
+};
+const item: Variants = {
+  hidden: { opacity: 0, y: 24 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.9, ease: [0.2, 0.7, 0.2, 1] as const } },
+};
 
 function Home() {
   return (
@@ -38,31 +48,28 @@ function Home() {
         </div>
 
         <div className="mx-auto w-full max-w-[1400px] px-6 md:px-10">
-          <motion.div
-            initial={{ opacity: 0, y: 24 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1.1, ease: [0.2, 0.7, 0.2, 1] }}
-            className="max-w-4xl"
-          >
-            <span className="eyebrow">I Link Group · Est. Africa & Beyond</span>
-            <h1 className="mt-6 font-display text-[clamp(2.6rem,7vw,6.5rem)] leading-[1.02] tracking-tight text-ink">
+          <motion.div variants={container} initial="hidden" animate="show" className="max-w-4xl">
+            <motion.span variants={item} className="eyebrow inline-flex items-center gap-2">
+              <Sparkles className="h-3.5 w-3.5" /> I Link Group · Est. Africa & Beyond
+            </motion.span>
+            <motion.h1 variants={item} className="mt-6 font-display text-[clamp(2.6rem,7vw,6.5rem)] leading-[1.02] tracking-tight text-ink">
               Bridging capital, innovation
               <br />
-              and <em className="not-italic text-gold">global markets.</em>
-            </h1>
-            <p className="mt-8 max-w-2xl text-base leading-relaxed text-slate md:text-lg">
+              and <span className="text-gold">global markets.</span>
+            </motion.h1>
+            <motion.p variants={item} className="mt-8 max-w-2xl text-base leading-relaxed text-slate md:text-lg">
               A diversified holding architecture — Global IP, International management,
               and national operating companies across Rwanda, Tanzania, Ghana and Ethiopia,
               each with its own dedicated subsite.
-            </p>
-            <div className="mt-10 flex flex-wrap items-center gap-5">
-              <Link to="/entities" className="inline-flex items-center gap-3 rounded-full bg-ink px-6 py-3 text-[12px] uppercase tracking-[0.24em] text-paper transition hover:bg-ink/85">
-                Meet the entities <span aria-hidden>→</span>
+            </motion.p>
+            <motion.div variants={item} className="mt-10 flex flex-wrap items-center gap-4">
+              <Link to="/entities" className="inline-flex items-center gap-2 rounded-full bg-gold px-6 py-3 text-[12px] uppercase tracking-[0.24em] text-[oklch(0.16_0.045_252)] transition hover:opacity-90">
+                Meet the entities <ArrowRight className="h-4 w-4" />
               </Link>
-              <Link to="/ecosystem" className="link-underline text-[12px] uppercase tracking-[0.24em] text-ink">
+              <Link to="/ecosystem" className="glass inline-flex items-center gap-2 rounded-full px-5 py-3 text-[12px] uppercase tracking-[0.24em] text-ink transition hover:text-gold">
                 Explore the architecture
               </Link>
-            </div>
+            </motion.div>
           </motion.div>
 
           <div className="mt-24 grid max-w-4xl grid-cols-2 gap-10 sm:grid-cols-4">
@@ -149,15 +156,20 @@ function Home() {
               <h2 className="mt-4 font-display text-4xl text-ink md:text-5xl">An integrated ecosystem.</h2>
             </Reveal>
             <div className="grid gap-px bg-hairline sm:grid-cols-2">
-              {pillars.map((p, i) => (
+              {pillars.map((p, i) => {
+                const Icon = p.icon;
+                return (
                 <Reveal key={p.n} delay={i * 0.08}>
-                  <div className="group h-full bg-paper p-8 transition-colors hover:bg-gold-soft/40">
-                    <span className="text-[10px] uppercase tracking-[0.28em] text-gold">{p.n}</span>
+                  <div className="glass group h-full rounded-2xl p-8 transition-all hover:-translate-y-1">
+                    <div className="flex items-center justify-between">
+                      <span className="text-[10px] uppercase tracking-[0.28em] text-gold">{p.n}</span>
+                      <Icon className="h-5 w-5 text-gold" />
+                    </div>
                     <p className="mt-4 font-display text-2xl text-ink">{p.t}</p>
                     <p className="mt-3 text-sm text-slate">{p.d}</p>
                   </div>
                 </Reveal>
-              ))}
+              );})}
             </div>
           </div>
         </div>
