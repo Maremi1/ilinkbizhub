@@ -10,7 +10,7 @@ export function EntityCard({ entity, index = 0 }: { entity: Entity; index?: numb
       viewport={{ once: true, margin: "-60px" }}
       transition={{ duration: 0.8, delay: index * 0.06, ease: [0.2, 0.7, 0.2, 1] }}
       whileHover={{ y: -6 }}
-      className="group relative flex h-full flex-col border border-hairline bg-paper p-8 transition-colors hover:border-ink"
+      className="glass group relative flex h-full flex-col rounded-2xl p-8 transition-all hover:border-gold/60"
     >
       <div className="flex items-start justify-between">
         <span className="eyebrow">{entity.region}</span>
