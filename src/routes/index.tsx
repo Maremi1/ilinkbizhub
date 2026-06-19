@@ -98,7 +98,7 @@ function Home() {
           </Reveal>
           <Reveal delay={0.1}>
             <p className="font-display text-3xl leading-snug text-ink md:text-5xl">
-              We are committed to <em className="text-gold not-italic">institutional excellence</em> —
+              We are committed to <span className="text-gold">institutional excellence</span> —
               raising standards in every entity we touch and engineering sustainable value across borders.
             </p>
             <div className="hairline mt-12" />
@@ -124,7 +124,7 @@ function Home() {
           <div>
             <span className="eyebrow">The Group</span>
             <h2 className="mt-4 max-w-2xl font-display text-4xl text-ink md:text-6xl">
-              One architecture. <em className="text-gold not-italic">Many gateways.</em>
+              One architecture. <span className="text-gold">Many gateways.</span>
             </h2>
           </div>
           <Link to="/entities" className="hidden link-underline text-[12px] uppercase tracking-[0.24em] text-ink sm:inline-block">
@@ -148,7 +148,7 @@ function Home() {
       </section>
 
       {/* PILLARS */}
-      <section className="border-y border-hairline bg-paper py-32">
+      <section className="py-32">
         <div className="mx-auto max-w-[1400px] px-6 md:px-10">
           <div className="grid gap-12 lg:grid-cols-[1fr_2fr]">
             <Reveal>
@@ -195,7 +195,7 @@ function Home() {
           <Reveal delay={0.1}>
             <span className="eyebrow">Mama Mia's Foundation</span>
             <h2 className="mt-4 font-display text-4xl text-ink md:text-5xl">
-              Profit, redirected toward <em className="text-gold not-italic">people.</em>
+              Profit, redirected toward <span className="text-gold">people.</span>
             </h2>
             <p className="mt-6 max-w-md text-sm leading-relaxed text-slate">
               I Link directs a portion of profits to our philanthropic arm — moving beyond

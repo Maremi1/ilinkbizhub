@@ -25,8 +25,8 @@ function Contact() {
       <section className="mx-auto max-w-[1400px] px-6 md:px-10">
         <Reveal>
           <span className="eyebrow">Get in touch</span>
-          <h1 className="mt-6 max-w-4xl font-display text-5xl leading-[1.05] text-ink md:text-7xl">
-            Let's build the <em className="text-gold not-italic">future, together.</em>
+          <h1 className="mt-6 max-w-4xl font-display text-4xl font-semibold leading-[1.05] text-ink md:text-5xl">
+            Let's build the <span className="text-gold">future, together.</span>
           </h1>
         </Reveal>
 
@@ -50,7 +50,7 @@ function Contact() {
 
           <Reveal delay={0.1}>
             <form
-              className="border border-hairline p-8 md:p-10"
+              className="glass rounded-3xl p-8 md:p-10"
               action="mailto:info@ilinkbiz.com"
               method="post"
               encType="text/plain"

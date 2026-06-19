@@ -23,8 +23,8 @@ function About() {
       <section className="mx-auto max-w-[1400px] px-6 md:px-10">
         <Reveal>
           <span className="eyebrow">About</span>
-          <h1 className="mt-6 max-w-4xl font-display text-5xl leading-[1.05] text-ink md:text-7xl">
-            A premier global management <em className="text-gold not-italic">& coordination firm.</em>
+          <h1 className="mt-6 max-w-4xl font-display text-4xl font-semibold leading-[1.05] text-ink md:text-5xl">
+            A premier global management <span className="text-gold">& coordination firm.</span>
           </h1>
         </Reveal>
 
@@ -84,7 +84,7 @@ function About() {
       </section>
 
       <section className="mx-auto mt-32 max-w-[1400px] px-6 md:px-10">
-        <div className="grid gap-12 border border-hairline p-10 lg:grid-cols-[1fr_1.4fr] lg:p-16">
+        <div className="grid gap-12 glass rounded-3xl p-10 lg:grid-cols-[1fr_1.4fr] lg:p-16">
           <Reveal>
             <span className="eyebrow">Founder legacy</span>
             <h2 className="mt-4 font-display text-4xl text-ink">The blueprint of tomorrow.</h2>
@@ -95,7 +95,7 @@ function About() {
               you structure and protect your assets today defines your legacy tomorrow. From family
               trust setup and corporate structuring to ongoing governance advisory, the practice
               gives high-net-worth families, entrepreneurs and institutions a cohesive strategy to
-              <em className="text-ink not-italic"> build, protect and transition</em> wealth — the right way.
+              <span className="text-ink"> build, protect and transition</span> wealth — the right way.
             </p>
             <a href="https://thefounder.ilinkbiz.com" target="_blank" rel="noopener noreferrer" className="mt-8 inline-flex items-center gap-3 link-underline text-[12px] uppercase tracking-[0.24em] text-ink">
               Visit The Founder ↗
